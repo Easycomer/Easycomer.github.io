@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "academicpages is a ready-to-fork GitHub Pages template for academic personal websites"
+title: "About me"
 excerpt: "About me"
 author_profile: true
 redirect_from: 
@@ -8,43 +8,53 @@ redirect_from:
   - /about.html
 ---
 
-This is the front page of a website that is powered by the [academicpages template](https://github.com/academicpages/academicpages.github.io) and hosted on GitHub pages. [GitHub pages](https://pages.github.com) is a free service in which websites are built and hosted from code and data stored in a GitHub repository, automatically updating when a new commit is made to the respository. This template was forked from the [Minimal Mistakes Jekyll Theme](https://mmistakes.github.io/minimal-mistakes/) created by Michael Rose, and then extended to support the kinds of content that academics have: publications, talks, teaching, a portfolio, blog posts, and a dynamically-generated CV. You can fork [this repository](https://github.com/academicpages/academicpages.github.io) right now, modify the configuration and markdown files, add your own PDFs and other content, and have your own site for free, with no ads! An older version of this template powers my own personal website at [stuartgeiger.com](http://stuartgeiger.com), which uses [this Github repository](https://github.com/staeiou/staeiou.github.io).
+I am a 5th year Ph.D. student in the Electrical and Computer Engineering department of the University of Wisconsin - Madison, advised by Professor [Kassem Fawaz](https://kassemfawaz.com/) at Wi-Pi here. My research interests focus on security in cyber-physical systems and user data privacy in the IoT environment. Previously, I investigated the privacy of mute buttons in video conferencing apps, including Webex, zoom, etc., on various desktop operating systems. Before that, I designed and implemented a pedestrian-to-vehicle authentication system based on pedestrian mobility verification using commercial mobile devices. I also implemented a crowd-sourcing pedestrian data collection framework to collect user walking behavior traces for a long duration from volunteered participants. Currently, I'm working on smartphone-based pedestrian abrupt road-crossing prediction to avoid potential traffic conflict in cellular V2X environments. 
 
-A data-driven personal website
-======
-Like many other Jekyll-based GitHub Pages templates, academicpages makes you separate the website's content from its form. The content & metadata of your website are in structured markdown files, while various other files constitute the theme, specifying how to transform that content & metadata into HTML pages. You keep these various markdown (.md), YAML (.yml), HTML, and CSS files in a public GitHub repository. Each time you commit and push an update to the repository, the [GitHub pages](https://pages.github.com/) service creates static HTML pages based on these files, which are hosted on GitHub's servers free of charge.
+# Research Project
+## Harnessing Mobile Ad hoc Network (MANET) to Improve Vulnerable Road User Safety
+Our goal is to investigate, implement, and demonstrate a mobile ad hoc network (MANET)-based, practical, infrastructure-free and secure framework that improves the safety of vulnerable road users such as pedestrians and cyclists in the situations when their safety is most threatened, e.g.,non-intersection crossings, lightly-lit areas, evening and late-night situations, and jaywalking.
 
-Many of the features of dynamic content management systems (like Wordpress) can be achieved in this fashion, using a fraction of the computational resources and with far less vulnerability to hacking and DDoSing. You can also modify the theme to your heart's content without touching the content of your site. If you get to a point where you've broken something in Jekyll/HTML/CSS beyond repair, your markdown files describing your talks, publications, etc. are safe. You can rollback the changes or even delete the repository and start over -- just be sure to save the markdown files! Finally, you can also write scripts that process the structured data on the site, such as [this one](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb) that analyzes metadata in pages about talks to display [a map of every location you've given a talk](https://academicpages.github.io/talkmap.html).
+### Data Collection APP
+The first step of the project is building a data collection platform to collect data from the road users. We first developed the flow of the data collection framework. This framework includes an Android app that runs on the client side and a server component that handles the collected data. The app encrypts the collected data on the client-side for privacy protection and automatically uploads to our Amazon "Simple Storage Service" (S3) server for temporary storage. The data is stored in encrypted format on S3 storage and downloaded to our local servers for further processing/analysis after decryption. Automatic labeling of data is performed locally on our server. Processed data will later be used for building prediction model on pedestrian's road crossing behavior.
 
-Getting started
-======
-1. Register a GitHub account if you don't have one and confirm your e-mail (required!)
-1. Fork [this repository](https://github.com/academicpages/academicpages.github.io) by clicking the "fork" button in the top right. 
-1. Go to the repository's settings (rightmost item in the tabs that start with "Code", should be below "Unwatch"). Rename the repository "[your GitHub username].github.io", which will also be your website's URL.
-1. Set site-wide configuration and create content & metadata (see below -- also see [this set of diffs](http://archive.is/3TPas) showing what files were changed to set up [an example site](https://getorg-testacct.github.io) for a user with the username "getorg-testacct")
-1. Upload any files (like PDFs, .zip files, etc.) to the files/ directory. They will appear at https://[your GitHub username].github.io/files/example.pdf.  
-1. Check status by going to the repository settings, in the "GitHub pages" section
+Please check out my data collection app in [Google Store](https://play.google.com/store/apps/details?id=com.mendhak.gpsloggerfhwa&hl=en). The source code of the data collection app can be found in [Wi-Pi DataCollectionApp Github](https://github.com/wi-pi/FHWA_DataCollectionApp).
 
-Site-wide configuration
-------
-The main configuration file for the site is in the base directory in [_config.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_config.yml), which defines the content in the sidebars and other site-wide features. You will need to replace the default variables with ones about yourself and your site's github repository. The configuration file for the top menu is in [_data/navigation.yml](https://github.com/academicpages/academicpages.github.io/blob/master/_data/navigation.yml). For example, if you don't have a portfolio or blog posts, you can remove those items from that navigation.yml file to remove them from the header. 
+### Multi-hop Packet Transmission on Android
+I developed an Android App for multi-hop communication between vehicles and pedestrians on road. Multi-hop communication can solve the problem of high communication delay in None-Line-of-Sight scenario and communication beyond range.
 
-Create content & metadata
-------
-For site content, there is one markdown file for each type of content, which are stored in directories like _publications, _talks, _posts, _teaching, or _pages. For example, each talk is a markdown file in the [_talks directory](https://github.com/academicpages/academicpages.github.io/tree/master/_talks). At the top of each markdown file is structured data in YAML about the talk, which the theme will parse to do lots of cool stuff. The same structured data about a talk is used to generate the list of talks on the [Talks page](https://academicpages.github.io/talks), each [individual page](https://academicpages.github.io/talks/2012-03-01-talk-1) for specific talks, the talks section for the [CV page](https://academicpages.github.io/cv), and the [map of places you've given a talk](https://academicpages.github.io/talkmap.html) (if you run this [python file](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.py) or [Jupyter notebook](https://github.com/academicpages/academicpages.github.io/blob/master/talkmap.ipynb), which creates the HTML for the map based on the contents of the _talks directory).
+Thus I designed and implemented a distance based data forwarding algorithms based on Wi-Fi Aware in commodity Android smartphones. This can extend the range of communication compared to single hop communication and reduce the communication delay caused by network congestion at the same time.
+### Vehicle to Pedestrian Authentication
+With the absence of a centralized entity managing node identities, a malicious entity can inject fake messages into our framework to impede traffic flows. Thus, our goal is to design an authentication mechanism to verify the source of the message in our MANET-based framework.
+We designed and implemented PEDRO, a PEDestRian mObility verification mechanism for pedestrians using commodity hardware, where only legitimate mobile pedestrians can be admitted to the ad hoc network consisting of trustworthy vehicles and pedestrians.
 
-**Markdown generator**
+Without precise synchronization between vehicles and pedestrians, we leverage RTT of ubiquitously available wireless signal to obtain sequence of location estimations of the prover (a pedestrian or an attacker) over time. Under RTT and GPS errors, PEDRO is able to verify the moving prover while effectively rejecting stationary attacks. With realistic simulation framework as well as through real-world case study, we show that PEDRO can achieve 8.5% Equal-Error-Rate against malicious attackers while maintaining relatively usable verification time of under 8 seconds.
+> Yucheng Yang, Kyuin Lee, Younghyun Kim, and Kassem Fawaz, 2021, November. PEDRO: Secure Pedestrian Mobility Verification in V2P Communication using Commercial Off-the-shelf Mobile Devices. [[Pdf]](https://wiscprivacy.com/member/member_yucheng/)
 
-I have also created [a set of Jupyter notebooks](https://github.com/academicpages/academicpages.github.io/tree/master/markdown_generator
-) that converts a CSV containing structured data about talks or presentations into individual markdown files that will be properly formatted for the academicpages template. The sample CSVs in that directory are the ones I used to create my own personal website at stuartgeiger.com. My usual workflow is that I keep a spreadsheet of my publications and talks, then run the code in these notebooks to generate the markdown files, then commit and push them to the GitHub repository.
+### Personalized Cellular Data based Pedestrian Street Crossing Bahavior Prediction System
+Currently, I'm working on predicting pedestrian's road crossing behavior combining GPS, sensory data, and road information from OpenStreetMap. The plan is to deploy the trained and tuned LSTM model into mobile devices, and achieve real-time road crossing prediction on pedestrian's smartphones.
 
-How to edit your site's GitHub repository
-------
-Many people use a git client to create files on their local computer and then push them to GitHub's servers. If you are not familiar with git, you can directly edit these configuration and markdown files directly in the github.com interface. Navigate to a file (like [this one](https://github.com/academicpages/academicpages.github.io/blob/master/_talks/2012-03-01-talk-1.md) and click the pencil icon in the top right of the content preview (to the right of the "Raw | Blame | History" buttons). You can delete a file by clicking the trashcan icon to the right of the pencil icon. You can also create new files or upload files by navigating to a directory and clicking the "Create new file" or "Upload files" buttons. 
 
-Example: editing a markdown file for a talk
-![Editing a markdown file for a talk](/images/editing-talk.png)
+# Publication
+>**Are You Really Muted?: A Privacy Analysis of Mute Buttons in Video Conferencing Apps**
+>**Yucheng Yang**, Jack West, George K. Thiruvathukal, Neil Klingensmith, and Kassem Fawaz\
+>*In the 22nd Privacy Enhancing Technologies Symposium (PETS ’22), 2022.*
 
-For more info
-------
-More info about configuring academicpages can be found in [the guide](https://academicpages.github.io/markdown/). The [guides for the Minimal Mistakes theme](https://mmistakes.github.io/minimal-mistakes/docs/configuration/) (which this theme was forked from) might also be helpful.
+>**AeroKey: Using Ambient Electromagnetic Radiation for Secure and Usable Wireless Device Authentication**\
+>Kyuin Lee, **Yucheng Yang**, Omkar Prabhune, Aishwarya Lekshmi Chithra, Jack West, Kassem Fawaz, Neil Klingensmith, Suman Banerjee, Younghyun Kim\
+>*In Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT ’22), 2022.*
+
+>**PEDRO: Secure Pedestrian Mobility Verification in V2P Communication using Commercial Off-the-shelf Mobile Devices**\
+>**Yucheng Yang**, Kyuin Lee, Younghyun Kim, and Kassem Fawaz\
+>*In Proceedings of the 2nd Workshop on CPS&IoT Security and Privacy (CPSIoTSec ’21), 2021.*
+
+>**Optimization of fingerprints reporting strategy for WLAN indoor localization**    
+>Xiaohua Tian, Wenxin Li, **Yucheng Yang**, Zhehui Zhang, Xinbing Wang    
+>*IEEE Transactions on Mobile Computing (TMC), 2017*   
+
+>**Performance analysis of wi-fi indoor localization with channel state information**  
+>Xiaohua Tian, Sujie Zhu, Sijie Xiong, Binyao Jiang, **Yucheng Yang**, Xinbing Wang  
+>*IEEE Transactions on Mobile Computing (TMC), 2018*
+
+## Contact
+
+* Email: `yang552_AT_wisc_dot_edu`
